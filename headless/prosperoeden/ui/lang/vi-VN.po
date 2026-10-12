@@ -2351,3 +2351,63 @@ msgstr "{0}/ (NSP hoặc XCI)"
 #: pe/ui/browse.cpp
 msgid "{0}/ (one folder per game ID)"
 msgstr "{0}/ (mỗi ID trò chơi một thư mục)"
+
+#. Game preset and report interface.
+msgid "Recommended settings"
+msgstr "Cài đặt đề xuất"
+
+#. Game preset and report interface.
+msgid "Confirm settings"
+msgstr "Xác nhận cài đặt"
+
+#. Game preset and report interface.
+msgid "Experimental"
+msgstr "Thử nghiệm"
+
+#. Game preset and report interface.
+msgid "Tested"
+msgstr "Đã kiểm thử"
+
+#. Game preset and report interface.
+msgid "Restore previous settings"
+msgstr "Khôi phục cài đặt trước"
+
+#. Game preset and report interface.
+msgid "Confirm"
+msgstr "Xác nhận"
+
+#. Game preset and report interface.
+msgid "Report tested settings"
+msgstr "Báo cáo cài đặt đã kiểm thử"
+
+#. Game preset and report interface.
+msgid "No tested preset available"
+msgstr "Không có cấu hình đã kiểm thử"
+
+#. Game preset and report interface.
+msgid "Needs testing on this Eden version"
+msgstr "Cần kiểm thử trên phiên bản Eden này"
+
+#. Game preset and report interface.
+msgid "Could not create report link."
+msgstr "Không thể tạo liên kết báo cáo."
+
+#. Game preset and report interface.
+msgid "Review the preset and test notes below. Press Cross again to apply."
+msgstr "Xem cấu hình và ghi chú kiểm thử bên dưới. Nhấn Cross lần nữa để áp dụng."
+
+#. Game preset and report interface.
+msgid "Press Cross again to restore the fields changed by the preset."
+msgstr "Nhấn Cross lần nữa để khôi phục các mục cấu hình đã thay đổi."
+
+#. Game preset and report interface.
+msgid "Scan to review your settings report on GitHub. Nothing is posted until you submit it."
+msgstr "Quét để xem báo cáo cài đặt trên GitHub. Không có gì được công bố cho đến khi bạn gửi báo cáo."
+
+#. Game preset and report interface.
+msgid "View preset"
+msgstr "Xem cấu hình"
+
+#. Game preset and report interface.
+msgid "No preset"
+msgstr "Không có cấu hình"

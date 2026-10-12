@@ -2351,3 +2351,63 @@ msgstr "{0}/ (NSP nebo XCI)"
 #: pe/ui/browse.cpp
 msgid "{0}/ (one folder per game ID)"
 msgstr "{0}/ (složka pro každé ID titulu)"
+
+#. Game preset and report interface.
+msgid "Recommended settings"
+msgstr "Doporučená nastavení"
+
+#. Game preset and report interface.
+msgid "Confirm settings"
+msgstr "Potvrdit nastavení"
+
+#. Game preset and report interface.
+msgid "Experimental"
+msgstr "Experimentální"
+
+#. Game preset and report interface.
+msgid "Tested"
+msgstr "Otestováno"
+
+#. Game preset and report interface.
+msgid "Restore previous settings"
+msgstr "Obnovit předchozí nastavení"
+
+#. Game preset and report interface.
+msgid "Confirm"
+msgstr "Potvrdit"
+
+#. Game preset and report interface.
+msgid "Report tested settings"
+msgstr "Nahlásit otestovaná nastavení"
+
+#. Game preset and report interface.
+msgid "No tested preset available"
+msgstr "Žádný otestovaný profil"
+
+#. Game preset and report interface.
+msgid "Needs testing on this Eden version"
+msgstr "Vyžaduje test v této verzi Eden"
+
+#. Game preset and report interface.
+msgid "Could not create report link."
+msgstr "Odkaz na hlášení nelze vytvořit."
+
+#. Game preset and report interface.
+msgid "Review the preset and test notes below. Press Cross again to apply."
+msgstr "Zkontrolujte profil a poznámky k testu níže. Znovu stiskněte Cross pro použití."
+
+#. Game preset and report interface.
+msgid "Press Cross again to restore the fields changed by the preset."
+msgstr "Znovu stiskněte Cross pro obnovení položek změněných profilem."
+
+#. Game preset and report interface.
+msgid "Scan to review your settings report on GitHub. Nothing is posted until you submit it."
+msgstr "Naskenujte kód a zkontrolujte hlášení nastavení na GitHub. Nic se nezveřejní, dokud jej neodešlete."
+
+#. Game preset and report interface.
+msgid "View preset"
+msgstr "Zobrazit profil"
+
+#. Game preset and report interface.
+msgid "No preset"
+msgstr "Žádný profil"

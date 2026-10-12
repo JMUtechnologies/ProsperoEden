@@ -2351,3 +2351,63 @@ msgstr "{0}/‎ (NSP أو XCI)"
 #: pe/ui/browse.cpp
 msgid "{0}/ (one folder per game ID)"
 msgstr "{0}/‎ (مجلد لكل معرّف لعبة)"
+
+#. Game preset and report interface.
+msgid "Recommended settings"
+msgstr "الإعدادات الموصى بها"
+
+#. Game preset and report interface.
+msgid "Confirm settings"
+msgstr "تأكيد الإعدادات"
+
+#. Game preset and report interface.
+msgid "Experimental"
+msgstr "تجريبي"
+
+#. Game preset and report interface.
+msgid "Tested"
+msgstr "تم اختباره"
+
+#. Game preset and report interface.
+msgid "Restore previous settings"
+msgstr "استعادة الإعدادات السابقة"
+
+#. Game preset and report interface.
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. Game preset and report interface.
+msgid "Report tested settings"
+msgstr "الإبلاغ عن الإعدادات المختبرة"
+
+#. Game preset and report interface.
+msgid "No tested preset available"
+msgstr "لا يوجد إعداد مسبق مختبر"
+
+#. Game preset and report interface.
+msgid "Needs testing on this Eden version"
+msgstr "يحتاج إلى اختبار على هذا الإصدار من Eden"
+
+#. Game preset and report interface.
+msgid "Could not create report link."
+msgstr "تعذر إنشاء رابط التقرير."
+
+#. Game preset and report interface.
+msgid "Review the preset and test notes below. Press Cross again to apply."
+msgstr "راجع الإعداد المسبق وملاحظات الاختبار أدناه. اضغط زر Cross مرة أخرى للتطبيق."
+
+#. Game preset and report interface.
+msgid "Press Cross again to restore the fields changed by the preset."
+msgstr "اضغط زر Cross مرة أخرى لاستعادة الحقول التي غيّرها الإعداد المسبق."
+
+#. Game preset and report interface.
+msgid "Scan to review your settings report on GitHub. Nothing is posted until you submit it."
+msgstr "امسح الرمز لمراجعة تقرير إعداداتك على GitHub. لن يُنشر شيء حتى ترسله."
+
+#. Game preset and report interface.
+msgid "View preset"
+msgstr "عرض الإعداد المسبق"
+
+#. Game preset and report interface.
+msgid "No preset"
+msgstr "لا يوجد إعداد مسبق"

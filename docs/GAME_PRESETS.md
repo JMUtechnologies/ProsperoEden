@@ -99,9 +99,14 @@ completion prompts in the issue body. This completes the guided report handoff
 check; submission and maintainer review remain deliberate tester/maintainer steps. No issue was submitted by the app or test automation.
 
 This validates the settings flow, not Jamboree gameplay performance. There are no
-verified game presets yet. New UI text falls back to English; translation-catalog
-completeness currently fails for those additions. Upstream issue-template availability and
-translation work remain required before release. Future work can add hardware/update
+verified game presets yet. All 15 new interface messages now have translations
+in all 29 supported catalogs; the complete 568-string catalog check passes.
+Existing long-label warnings remain. Native-speaker review and console layout
+checks for other languages are still welcome. The system-font scripts were not
+validated against copied console fonts during host checks. Native PS5 acceptance
+above covers the English interface; the catalog-only follow-up does not change
+the tested application logic. Upstream report links require the issue template
+to be merged. Future work can add hardware/update
 matching and an in-app overview/filter of the compatibility list.
 
 ## Isolated PS5 engine test

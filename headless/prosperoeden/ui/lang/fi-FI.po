@@ -2351,3 +2351,63 @@ msgstr "{0}/ (NSP tai XCI)"
 #: pe/ui/browse.cpp
 msgid "{0}/ (one folder per game ID)"
 msgstr "{0}/ (kansio kutakin nimiketunnusta kohden)"
+
+#. Game preset and report interface.
+msgid "Recommended settings"
+msgstr "Suositellut asetukset"
+
+#. Game preset and report interface.
+msgid "Confirm settings"
+msgstr "Vahvista asetukset"
+
+#. Game preset and report interface.
+msgid "Experimental"
+msgstr "Kokeellinen"
+
+#. Game preset and report interface.
+msgid "Tested"
+msgstr "Testattu"
+
+#. Game preset and report interface.
+msgid "Restore previous settings"
+msgstr "Palauta aiemmat asetukset"
+
+#. Game preset and report interface.
+msgid "Confirm"
+msgstr "Vahvista"
+
+#. Game preset and report interface.
+msgid "Report tested settings"
+msgstr "Raportoi testatut asetukset"
+
+#. Game preset and report interface.
+msgid "No tested preset available"
+msgstr "Testattua profiilia ei ole"
+
+#. Game preset and report interface.
+msgid "Needs testing on this Eden version"
+msgstr "Vaatii testauksen tässä Eden-versiossa"
+
+#. Game preset and report interface.
+msgid "Could not create report link."
+msgstr "Raporttilinkkiä ei voitu luoda."
+
+#. Game preset and report interface.
+msgid "Review the preset and test notes below. Press Cross again to apply."
+msgstr "Tarkista profiili ja testihuomiot alta. Ota käyttöön painamalla Cross uudelleen."
+
+#. Game preset and report interface.
+msgid "Press Cross again to restore the fields changed by the preset."
+msgstr "Palauta profiilin muuttamat kentät painamalla Cross uudelleen."
+
+#. Game preset and report interface.
+msgid "Scan to review your settings report on GitHub. Nothing is posted until you submit it."
+msgstr "Skannaa ja tarkista asetusraporttisi GitHubissa. Mitään ei julkaista ennen raportin lähettämistä."
+
+#. Game preset and report interface.
+msgid "View preset"
+msgstr "Näytä profiili"
+
+#. Game preset and report interface.
+msgid "No preset"
+msgstr "Ei profiilia"

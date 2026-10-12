@@ -2351,3 +2351,63 @@ msgstr "{0}/(NSP 또는 XCI)"
 #: pe/ui/browse.cpp
 msgid "{0}/ (one folder per game ID)"
 msgstr "{0}/(타이틀 ID마다 폴더 하나)"
+
+#. Game preset and report interface.
+msgid "Recommended settings"
+msgstr "권장 설정"
+
+#. Game preset and report interface.
+msgid "Confirm settings"
+msgstr "설정 확인"
+
+#. Game preset and report interface.
+msgid "Experimental"
+msgstr "실험적"
+
+#. Game preset and report interface.
+msgid "Tested"
+msgstr "테스트됨"
+
+#. Game preset and report interface.
+msgid "Restore previous settings"
+msgstr "이전 설정 복원"
+
+#. Game preset and report interface.
+msgid "Confirm"
+msgstr "확인"
+
+#. Game preset and report interface.
+msgid "Report tested settings"
+msgstr "테스트한 설정 보고"
+
+#. Game preset and report interface.
+msgid "No tested preset available"
+msgstr "테스트된 프리셋 없음"
+
+#. Game preset and report interface.
+msgid "Needs testing on this Eden version"
+msgstr "이 Eden 버전에서 테스트 필요"
+
+#. Game preset and report interface.
+msgid "Could not create report link."
+msgstr "보고 링크를 만들 수 없습니다."
+
+#. Game preset and report interface.
+msgid "Review the preset and test notes below. Press Cross again to apply."
+msgstr "아래 프리셋과 테스트 참고 사항을 확인하세요. 적용하려면 Cross를 다시 누르세요."
+
+#. Game preset and report interface.
+msgid "Press Cross again to restore the fields changed by the preset."
+msgstr "프리셋이 변경한 항목을 복원하려면 Cross를 다시 누르세요."
+
+#. Game preset and report interface.
+msgid "Scan to review your settings report on GitHub. Nothing is posted until you submit it."
+msgstr "코드를 스캔하여 GitHub에서 설정 보고서를 확인하세요. 제출하기 전에는 아무것도 게시되지 않습니다."
+
+#. Game preset and report interface.
+msgid "View preset"
+msgstr "프리셋 보기"
+
+#. Game preset and report interface.
+msgid "No preset"
+msgstr "프리셋 없음"

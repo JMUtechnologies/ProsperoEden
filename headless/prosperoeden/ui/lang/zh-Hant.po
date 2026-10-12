@@ -2351,3 +2351,63 @@ msgstr "{0}/（NSP 或 XCI）"
 #: pe/ui/browse.cpp
 msgid "{0}/ (one folder per game ID)"
 msgstr "{0}/（每個遊戲 ID 一個資料夾）"
+
+#. Game preset and report interface.
+msgid "Recommended settings"
+msgstr "建議設定"
+
+#. Game preset and report interface.
+msgid "Confirm settings"
+msgstr "確認設定"
+
+#. Game preset and report interface.
+msgid "Experimental"
+msgstr "實驗性"
+
+#. Game preset and report interface.
+msgid "Tested"
+msgstr "已測試"
+
+#. Game preset and report interface.
+msgid "Restore previous settings"
+msgstr "還原先前的設定"
+
+#. Game preset and report interface.
+msgid "Confirm"
+msgstr "確認"
+
+#. Game preset and report interface.
+msgid "Report tested settings"
+msgstr "回報已測試的設定"
+
+#. Game preset and report interface.
+msgid "No tested preset available"
+msgstr "沒有經過測試的預設"
+
+#. Game preset and report interface.
+msgid "Needs testing on this Eden version"
+msgstr "需要在此 Eden 版本上測試"
+
+#. Game preset and report interface.
+msgid "Could not create report link."
+msgstr "無法建立報告連結。"
+
+#. Game preset and report interface.
+msgid "Review the preset and test notes below. Press Cross again to apply."
+msgstr "請查看下方的預設和測試說明。再次按 Cross 套用。"
+
+#. Game preset and report interface.
+msgid "Press Cross again to restore the fields changed by the preset."
+msgstr "再次按 Cross 還原預設變更的欄位。"
+
+#. Game preset and report interface.
+msgid "Scan to review your settings report on GitHub. Nothing is posted until you submit it."
+msgstr "掃碼在 GitHub 上查看設定報告。提交之前不會發布任何內容。"
+
+#. Game preset and report interface.
+msgid "View preset"
+msgstr "查看預設"
+
+#. Game preset and report interface.
+msgid "No preset"
+msgstr "無預設"

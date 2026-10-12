@@ -2351,3 +2351,63 @@ msgstr "{0}/（NSPまたはXCI）"
 #: pe/ui/browse.cpp
 msgid "{0}/ (one folder per game ID)"
 msgstr "{0}/（タイトルIDごとに1フォルダー）"
+
+#. Game preset and report interface.
+msgid "Recommended settings"
+msgstr "推奨設定"
+
+#. Game preset and report interface.
+msgid "Confirm settings"
+msgstr "設定を確定"
+
+#. Game preset and report interface.
+msgid "Experimental"
+msgstr "実験的"
+
+#. Game preset and report interface.
+msgid "Tested"
+msgstr "テスト済み"
+
+#. Game preset and report interface.
+msgid "Restore previous settings"
+msgstr "以前の設定に戻す"
+
+#. Game preset and report interface.
+msgid "Confirm"
+msgstr "確認"
+
+#. Game preset and report interface.
+msgid "Report tested settings"
+msgstr "テストした設定を報告"
+
+#. Game preset and report interface.
+msgid "No tested preset available"
+msgstr "テスト済みプリセットなし"
+
+#. Game preset and report interface.
+msgid "Needs testing on this Eden version"
+msgstr "このEdenバージョンでのテストが必要"
+
+#. Game preset and report interface.
+msgid "Could not create report link."
+msgstr "報告リンクを作成できませんでした。"
+
+#. Game preset and report interface.
+msgid "Review the preset and test notes below. Press Cross again to apply."
+msgstr "以下のプリセットとテスト内容を確認してください。適用するにはCrossをもう一度押してください。"
+
+#. Game preset and report interface.
+msgid "Press Cross again to restore the fields changed by the preset."
+msgstr "プリセットが変更した項目を戻すにはCrossをもう一度押してください。"
+
+#. Game preset and report interface.
+msgid "Scan to review your settings report on GitHub. Nothing is posted until you submit it."
+msgstr "コードを読み取り、GitHubで設定の報告を確認してください。送信するまで何も公開されません。"
+
+#. Game preset and report interface.
+msgid "View preset"
+msgstr "プリセットを表示"
+
+#. Game preset and report interface.
+msgid "No preset"
+msgstr "プリセットなし"
