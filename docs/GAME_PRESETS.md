@@ -90,11 +90,17 @@ and GitHub opened in its mobile app with the correct fork and game-ID title.
 The mobile app ignored the issue-form fields and showed an empty body. A follow-up
 adds a standard `body` query parameter containing the same allowlisted snapshot
 and prompts, while retaining web issue-form fields. Host checks and QR decode
-cover this fallback; a rebuilt application and phone retest remain pending. No issue was submitted by the app or test automation.
+cover this fallback. The native application at `a84bdc3` passed fork CI run
+`38209068766` and was installed with all 66 app files verified and real
+configuration unchanged. After reinstall/relaunch, the tester opened Recommended
+settings and scanned the new QR. Their GitHub Mobile screenshot confirms the
+correct fork, title ID, Eden version, current allowlisted settings snapshot and
+completion prompts in the issue body. This completes the guided report handoff
+check; submission and maintainer review remain deliberate tester/maintainer steps. No issue was submitted by the app or test automation.
 
 This validates the settings flow, not Jamboree gameplay performance. There are no
 verified game presets yet. New UI text falls back to English; translation-catalog
-completeness currently fails for those additions. Report form acceptance and
+completeness currently fails for those additions. Upstream issue-template availability and
 translation work remain required before release. Future work can add hardware/update
 matching and an in-app overview/filter of the compatibility list.
 
