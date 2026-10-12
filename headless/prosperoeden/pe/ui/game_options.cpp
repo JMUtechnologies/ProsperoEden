@@ -406,7 +406,8 @@ void Launcher::press_game_options(Key key)
         }
         if (row == 2)
         {
-            preset_report_qr_ = make_qr_code(services_.game_report_url(game.title_id));
+            const auto url = services_.game_report_url(game.title_id);
+            preset_report_qr_ = url.empty() ? QrCode{} : make_qr_code(url);
             preset_reporting_ = preset_report_qr_.size > 0;
             if (!preset_reporting_)
                 say(tr("Could not create report link."), true);
