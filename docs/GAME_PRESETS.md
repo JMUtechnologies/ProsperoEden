@@ -73,9 +73,40 @@ unknown title/version refusal and redacted URL construction. The Linux launcher
 preview exercises confirmation/apply/restore/report navigation using synthetic
 sample games and an in-memory service; rendered screens have no GL errors.
 
-This prototype has not been cross-built or installed on a PS5. It has no verified
-presets yet. The new UI text falls back to English; translation-catalog completeness
+The full application prototype has not been cross-built or installed on a PS5.
+It has no verified game presets yet. The new UI text falls back to English; translation-catalog completeness
 currently fails for those additions. Full native build/console acceptance, actual
 phone scanning of the long prefilled URL, and the GitHub form after merging remain
 required before release. Future work can add hardware/update matching and an
 in-app overview/filter of the compatibility list.
+
+## Isolated PS5 engine test
+
+The production engine at branch commit `22b625d` passed nine isolated scenarios
+on the tester's original/phat PS5, firmware 4.50. A raw ELF compiled with the
+PS5 Payload SDK linked `game_presets.h` unchanged and used synthetic settings
+under `/data/prosperoeden/.preset-test-22b625d-20261011` exclusively.
+
+Covered: apply/unrelated-field preservation, repeated apply/original snapshot,
+restore after a later unrelated edit, unknown-version/title/missing-undo refusal,
+profile isolation, report allowlist, malformed-file refusal, atomic-write failure,
+and missing-field/inheritance round trip. The real configuration hash was
+identical before and after. The fixture directory was removed after retrieving
+its report. The harness did not read real saves, game files or configuration;
+the separate before/after verification read the real config to hash it.
+
+```text
+PASS: 9 isolated PS5 preset scenarios.
+Production branch commit: 22b625d
+Real configuration, saves and game files were not accessed by this test.
+```
+
+Source: `headless/game_presets_console_check.cpp`. Build with the official SDK
+and a nlohmann include root using `tools/build-preset-console-check.sh`, then use
+an existing external ELF loader. The payload refuses an existing fixture folder
+and leaves results in `result.txt`; remove only that fixture directory after
+inspection before rerunning. The script builds only and never deploys.
+
+This is settings-engine evidence using the payload SDK runtime, not native
+launcher/controller/QR acceptance or new game-performance evidence. The full
+application's build is tracked separately.
