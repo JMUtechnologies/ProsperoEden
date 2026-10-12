@@ -6,6 +6,10 @@
 #include <cerrno>
 #include <sys/stat.h>
 
+#ifndef EDEN_PRESET_REPORT_REPOSITORY
+#define EDEN_PRESET_REPORT_REPOSITORY "blackbearreloaded/ProsperoEden"
+#endif
+
 namespace Eden::Presets {
 using Json = Settings::Json;
 struct Preset {
@@ -152,7 +156,7 @@ inline std::string ReportUrl(uint64_t title, std::string_view version, const std
             {"fast_gpu", speed.fast_gpu}, {"unsafe_cpu", speed.unsafe_cpu}, {"unsafe_dma", speed.unsafe_dma},
             {"reactive_flushing", speed.reactive_flushing}, {"skip_invalidation", speed.skip_invalidation}}}
     };
-    return "https://github.com/blackbearreloaded/ProsperoEden/issues/new?template=compatibility_settings.yml&title=" +
+    return std::string("https://github.com/") + EDEN_PRESET_REPORT_REPOSITORY + "/issues/new?template=compatibility_settings.yml&title=" +
         UrlEncode("[Settings report] " + Settings::TitleKey(title)) + "&game=" + UrlEncode(Settings::TitleKey(title)) +
         "&eden=" + UrlEncode(version) + "&settings=" + UrlEncode(settings.dump());
 }

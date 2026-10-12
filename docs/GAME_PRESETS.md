@@ -48,8 +48,11 @@ The tester must check it and supply the game/update, console/firmware/enabler,
 repeatable scene, duration, FPS, graphics and sound results. No Works result is
 preselected. Optional evidence is attached manually after review.
 
-The issue form must first be merged into the upstream default branch for the
-in-app upstream URL to work. Preview scans do not submit issues.
+CI builds report to `GITHUB_REPOSITORY`; local builds default upstream and can set
+`EDEN_PRESET_REPORT_REPOSITORY=owner/repo` through CMake. The report form must
+exist in that repository's default branch. The testing fork has its form on main
+and issues enabled; upstream still needs the form merged before upstream report
+links work. Preview scans do not submit issues.
 
 Maintainers review reports and add/update entries through pull requests. Entries
 ship with app updates and work offline; there is no service dependency or automatic

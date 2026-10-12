@@ -2506,6 +2506,16 @@ if(EDEN_PS5_OPENGL)
         "${EDEN_PORT_DIR}/loading_text.glsl" "${EDEN_PORT_DIR}/loading_scene.glsl")
     write_derived("${PORT_BUILD_DIR}/include/loading_scene_glsl.h"
         "// Generated from loading_text.glsl and loading_scene.glsl.\n#pragma once\ninline constexpr const char* kLoadingSceneGlsl = R\"glsl(\n${loading_wordmark}${loading_scene})glsl\";\n")
+    # Reports belong to the repository that built the app; local builds default upstream.
+    set(EDEN_PRESET_REPORT_REPOSITORY "$ENV{GITHUB_REPOSITORY}" CACHE STRING "GitHub repository for compatibility reports")
+    if(EDEN_PRESET_REPORT_REPOSITORY STREQUAL "")
+        set(EDEN_PRESET_REPORT_REPOSITORY "blackbearreloaded/ProsperoEden")
+    endif()
+    if(NOT EDEN_PRESET_REPORT_REPOSITORY MATCHES "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$")
+        message(FATAL_ERROR "EDEN_PRESET_REPORT_REPOSITORY must be owner/repo")
+    endif()
+    target_compile_definitions(eden-headless PRIVATE
+        EDEN_PRESET_REPORT_REPOSITORY="${EDEN_PRESET_REPORT_REPOSITORY}")
     target_compile_definitions(eden-headless PRIVATE EDEN_PS5_OPENGL=1)
     target_link_libraries(eden-headless PRIVATE PS5OpenGL::OpenGL glad)
 endif()
