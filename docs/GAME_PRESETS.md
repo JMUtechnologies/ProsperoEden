@@ -76,12 +76,22 @@ unknown title/version refusal and redacted URL construction. The Linux launcher
 preview exercises confirmation/apply/restore/report navigation using synthetic
 sample games and an in-memory service; rendered screens have no GL errors.
 
-The full application prototype has not been cross-built or installed on a PS5.
-It has no verified game presets yet. The new UI text falls back to English; translation-catalog completeness
-currently fails for those additions. Full native build/console acceptance, actual
-phone scanning of the long prefilled URL, and the GitHub form after merging remain
-required before release. Future work can add hardware/update matching and an
-in-app overview/filter of the compatibility list.
+The full native application at `3b2709f` built successfully in fork CI run
+`38205905736` and was installed on the tester's original/phat PS5, firmware 4.50.
+All 66 uploaded app files matched the package; the existing app and configuration
+were backed up locally. Installation left the real configuration unchanged.
+The tester opened Recommended settings, confirmed Apply, then confirmed Restore.
+Readback verified all 13 preset values, the original-value snapshot and preservation
+of unrelated game settings. After Restore, all original per-game settings matched
+and the temporary preset backup was removed. The tester scanned the displayed QR
+and GitHub opened on their phone; repository destination and prefilled fields still
+await tester confirmation. No issue was submitted by the app or test automation.
+
+This validates the settings flow, not Jamboree gameplay performance. There are no
+verified game presets yet. New UI text falls back to English; translation-catalog
+completeness currently fails for those additions. Report form acceptance and
+translation work remain required before release. Future work can add hardware/update
+matching and an in-app overview/filter of the compatibility list.
 
 ## Isolated PS5 engine test
 
