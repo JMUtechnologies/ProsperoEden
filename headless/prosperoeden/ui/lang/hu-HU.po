@@ -2351,3 +2351,63 @@ msgstr "{0}/ (NSP vagy XCI)"
 #: pe/ui/browse.cpp
 msgid "{0}/ (one folder per game ID)"
 msgstr "{0}/ (játékazonosítónként egy mappa)"
+
+#. Game preset and report interface.
+msgid "Recommended settings"
+msgstr "Ajánlott beállítások"
+
+#. Game preset and report interface.
+msgid "Confirm settings"
+msgstr "Beállítások megerősítése"
+
+#. Game preset and report interface.
+msgid "Experimental"
+msgstr "Kísérleti"
+
+#. Game preset and report interface.
+msgid "Tested"
+msgstr "Tesztelt"
+
+#. Game preset and report interface.
+msgid "Restore previous settings"
+msgstr "Korábbi beállítások visszaállítása"
+
+#. Game preset and report interface.
+msgid "Confirm"
+msgstr "Megerősítés"
+
+#. Game preset and report interface.
+msgid "Report tested settings"
+msgstr "Tesztelt beállítások jelentése"
+
+#. Game preset and report interface.
+msgid "No tested preset available"
+msgstr "Nincs tesztelt profil"
+
+#. Game preset and report interface.
+msgid "Needs testing on this Eden version"
+msgstr "Tesztelni kell ezen az Eden-verzión"
+
+#. Game preset and report interface.
+msgid "Could not create report link."
+msgstr "Nem sikerült létrehozni a jelentés hivatkozását."
+
+#. Game preset and report interface.
+msgid "Review the preset and test notes below. Press Cross again to apply."
+msgstr "Ellenőrizd lent a profilt és a teszt megjegyzéseit. Az alkalmazáshoz nyomd meg újra a Cross gombot."
+
+#. Game preset and report interface.
+msgid "Press Cross again to restore the fields changed by the preset."
+msgstr "A profil által módosított mezők visszaállításához nyomd meg újra a Cross gombot."
+
+#. Game preset and report interface.
+msgid "Scan to review your settings report on GitHub. Nothing is posted until you submit it."
+msgstr "Olvasd be a kódot, és ellenőrizd a beállításjelentést a GitHubon. Semmi nem jelenik meg, amíg el nem küldöd."
+
+#. Game preset and report interface.
+msgid "View preset"
+msgstr "Profil megtekintése"
+
+#. Game preset and report interface.
+msgid "No preset"
+msgstr "Nincs profil"

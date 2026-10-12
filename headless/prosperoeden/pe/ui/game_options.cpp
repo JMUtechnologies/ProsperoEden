@@ -7,6 +7,7 @@
 #include "pe/ui/launcher.hpp"
 
 #include <algorithm>
+#include <cmath>
 #include <chrono>
 #include <cstdint>
 #include <string>
@@ -37,9 +38,10 @@ enum Category : int
     category_controls,
     category_system,
     category_language,
+    category_presets,
 };
 constexpr const char *kCategoryNames[] = {TR("Video"), TR("Performance"), TR("Audio"), TR("Controls"),
-                                          TR("System"), TR("Language")};
+                                          TR("System"), TR("Language"), TR("Recommended settings")};
 // The Controls category's rows.
 constexpr int kVibrationRow = 0;
 constexpr int kMappingRow = 1;
@@ -174,10 +176,43 @@ std::vector<Option> options(int category, const GameSettings &game, Preferences 
         rows.push_back({tr("RNG seed"), {std::to_string(std::max<std::int64_t>(game.rng_seed, 0))},
                         game.rng_seed >= 0 ? 0 : -1, tr("Random")});
         break;
+    case category_presets:
+        break;
     default:
         rows.push_back({tr("Language"), services.language_labels(), game.language,
                         pick(services.language_labels(), prefs.language)});
         break;
+    }
+    return rows;
+}
+
+std::vector<Option> preset_options(const GamePreset &preset)
+{
+    std::vector<Option> rows = {
+        {tr("Confirm settings"),
+         {preset.experimental ? tr("Experimental") : tr("Tested")},
+         0,
+         "",
+         !preset.compatible},
+        {tr("Restore previous settings"), {tr("Confirm")}, 0, "", !preset.restore},
+        {tr("Report tested settings"), {tr("Open")}, 0, ""}};
+    if (!preset.available)
+        rows.push_back({tr("No tested preset available"), {}, -1, "", true});
+    else
+    {
+        if (!preset.compatible)
+            rows.push_back({tr("Needs testing on this Eden version"), {}, -1, "", true});
+        std::size_t start = 0;
+        for (auto end = preset.evidence.find('\n'); start < preset.evidence.size();
+             end = preset.evidence.find('\n', start))
+        {
+            rows.push_back({preset.evidence.substr(start, end - start), {}, -1, "", true});
+            if (end == std::string::npos)
+                break;
+            start = end + 1;
+        }
+        for (const auto &change : preset.changes)
+            rows.push_back({change, {}, -1, "", true});
     }
     return rows;
 }
@@ -254,8 +289,10 @@ void Launcher::open_game_options(int category)
     game_options_ = std::clamp(category, 0, kGameOptionCategories - 1);
     option_rows_.visible = kRowsShown;
     option_rows_.pitch = kRowPitch;
-    option_rows_.reset(
-        static_cast<int>(options(game_options_, game_settings_, prefs_, services_, {hertz(0), hertz(1)}).size()), 0);
+    preset_armed_ = preset_reporting_ = false;
+    const auto rows = game_options_ == category_presets ? preset_options(game_preset_) :
+        options(game_options_, game_settings_, prefs_, services_, {hertz(0), hertz(1)});
+    option_rows_.reset(static_cast<int>(rows.size()), 0);
     option_ = 0;
     modal_ = modal_shown_ = Modal::game_options;
     message_.clear();
@@ -324,10 +361,17 @@ void Launcher::press_game_options(Key key)
         return;
     }
     const Game &game = games_[static_cast<std::size_t>(library_.selected)];
-    const std::vector<Option> rows = options(game_options_, game_settings_, prefs_, services_, {hertz(0), hertz(1)});
+    const std::vector<Option> rows = game_options_ == category_presets ? preset_options(game_preset_) :
+        options(game_options_, game_settings_, prefs_, services_, {hertz(0), hertz(1)});
+    if (preset_reporting_)
+    {
+        if (key == Key::circle) { preset_reporting_ = false; cue(Cue::back); }
+        return;
+    }
     switch (key)
     {
     case Key::circle:
+        preset_armed_ = false;
         // Back to the game's settings, on this category's row.
         modal_ = modal_shown_ = Modal::game;
         option_ = game_rows_.selected;
@@ -339,6 +383,7 @@ void Launcher::press_game_options(Key key)
         if (option_rows_.move(key == Key::down ? 1 : -1))
         {
             option_ = option_rows_.selected;
+            preset_armed_ = false;
             message_.clear();
             cue(Cue::focus);
         }
@@ -352,6 +397,53 @@ void Launcher::press_game_options(Key key)
     }
     const int row = std::clamp(option_rows_.selected, 0, static_cast<int>(rows.size()) - 1);
     const Option &option = rows[static_cast<std::size_t>(row)];
+    if (game_options_ == category_presets)
+    {
+        if (key != Key::cross)
+        {
+            preset_armed_ = false;
+            return;
+        }
+        if (row == 2)
+        {
+            const auto url = services_.game_report_url(game.title_id);
+            preset_report_qr_ = url.empty() ? QrCode{} : make_qr_code(url);
+            preset_reporting_ = preset_report_qr_.size > 0;
+            if (!preset_reporting_)
+                say(tr("Could not create report link."), true);
+            preset_armed_ = false;
+            return;
+        }
+        if (row > 1 || option.locked)
+        {
+            preset_armed_ = false;
+            return;
+        }
+        if (!preset_armed_)
+        {
+            preset_armed_ = true;
+            say(row == 0 ? tr("Review the preset and test notes below. Press Cross "
+                              "again to apply.")
+                         : tr("Press Cross again to restore the fields changed by "
+                              "the preset."),
+                true);
+            return;
+        }
+        preset_armed_ = false;
+        const bool saved = row == 0 ? services_.apply_game_preset(game.title_id)
+                                    : services_.restore_game_preset(game.title_id);
+        if (saved)
+        {
+            game_settings_ = services_.game_settings(game.title_id);
+            game_preset_ = services_.game_preset(game.title_id);
+            game_docked_ = services_.docked(game.title_id);
+        }
+        say(saved ? tr("Saved for this game. Applies on next launch.")
+                  : tr("Could not save. Please try again."),
+            !saved);
+        cue(saved ? Cue::toggle : Cue::error);
+        return;
+    }
     // The game's own mapping is edited in its own list.
     if (game_options_ == category_controls && row == kMappingRow && key == Key::cross && option.value >= 0)
     {
@@ -400,7 +492,30 @@ void Launcher::draw_game_options(Canvas &c, float open)
     text_fit(c, game != nullptr ? game->name : std::string{}, 592.0f, baseline(291.0f, 32.0f, theme::kSmall),
              theme::kSmall, Color::rgb(0xbecbb9), 736.0f);
 
-    const std::vector<Option> rows = options(game_options_, game_settings_, prefs_, services_, {hertz(0), hertz(1)});
+    if (preset_reporting_)
+    {
+        const Rect box{650.0f, 360.0f, 440.0f, 440.0f};
+        list.rounded_rect(box, 8.0f, Color::rgb(0xffffff));
+        const float module =
+            std::floor((box.w - 24.0f) / static_cast<float>(preset_report_qr_.size + 8));
+        const float start = box.x + (box.w - module * preset_report_qr_.size) * 0.5f;
+        const float top = box.y + (box.h - module * preset_report_qr_.size) * 0.5f;
+        for (int y = 0; y < preset_report_qr_.size; ++y)
+            for (int x = 0; x < preset_report_qr_.size; ++x)
+                if (preset_report_qr_.at(x, y))
+                    list.rounded_rect({start + x * module, top + y * module, module, module}, 0.0f,
+                                      Color::rgb(0x000000));
+        notice_block(c,
+                     tr("Scan to review your settings report on GitHub. Nothing is "
+                        "posted until you submit it."),
+                     592.0f, kHints - 6.0f, theme::kSmall, 26.0f, theme::kLimePale, 736.0f, 2,
+                     false);
+        list.pop_transform();
+        list.pop_opacity();
+        return;
+    }
+    const std::vector<Option> rows = game_options_ == category_presets ? preset_options(game_preset_) :
+        options(game_options_, game_settings_, prefs_, services_, {hertz(0), hertz(1)});
     list.push_clip({kWindow.x - 24.0f, kWindow.y - 6.0f, kWindow.w + 48.0f, kWindow.h + 12.0f});
     const auto row_top = [&](int row)
     { return kRowsTop + static_cast<float>(row) * kRowPitch - option_rows_.scroll(); };
@@ -423,8 +538,8 @@ void Launcher::draw_game_options(Canvas &c, float open)
         const std::string value = option.locked ? std::string{tr("Unavailable")} :
             option.value >= 0 ? pick(option.values, option.value) : fill(tr("Default ({0})"), {option.usual});
         if (option.locked)
-            list.push_opacity(0.38f);
-        const float taken = chooser(c, value, 1296.0f, baseline(top, kRowHeight, theme::kText24),
+            list.push_opacity(game_options_ == category_presets && row > 2 ? 1.0f : 0.38f);
+        const float taken = game_options_ == category_presets && row > 2 ? 0.0f : chooser(c, value, 1296.0f, baseline(top, kRowHeight, theme::kText24),
                                     row == option_rows_.selected ? 1.0f : 0.0f,
                                     option.value >= 0 ? theme::kLime : theme::kLimePale);
         text_shrink(c, option.name, 628.0f, baseline(top, kRowHeight, theme::kText24), theme::kText24,

@@ -262,6 +262,15 @@ Each profile can keep its save data on a server, such as a [RomM](https://github
 
 `"type": "romm"` keeps the save data on a [RomM](https://github.com/rommapp/romm) server with save sync, RomM 5.0.0 or newer (checked with 5.0.0 to 5.3.1). With an older server nothing is synced, and every sync says so in a dialog to confirm, with the server's version and the one it needs. Paired from Settings > Save sync, RomM's device authorization does the signing in: the code is approved on the server's page `/pair/device`, and RomM makes a device of the console with a client API token bound to it. Set up over FTP instead, its entry in `save-sync.json` has the server's `"url"` and a `"token"` of the profile's own RomM user: in RomM, create a client API token (your profile, **Client API tokens**) with the scopes `platforms.read`, `roms.read`, `assets.read`, `assets.write`, `devices.read` and `devices.write` (and `me.read`, for the log to name the user); a scope that is missing is named when a sync fails. `"username"` and `"password"` work instead of `"token"`, and `"platform"` names the platform's slug when the server does not call it `switch`. The console is registered once as a device of that user, **ProsperoEden (PS5)**, and RomM knows from it which version of each game's save data the console last had. A game's save data is in its slot `autosave`, for the emulator `eden`, as Argosy keeps Eden's; the game's other slots and other emulators' save data are left alone. Which side changed is told by the save data itself, not by the times RomM compares: the console keeps what it last had in step (`config/remote/save-sync/<profile>/synced.json`). Save data deleted in RomM is uploaded again by the console that still has it.
 
+### Community game presets (prototype)
+
+**Library > Game settings > Recommended settings** previews a bundled preset,
+asks for confirmation, and can restore the previous settings. **Report tested
+settings** opens a QR code for a reviewed GitHub report. The first entry is an
+experimental Jamboree candidate; no preset is approved yet. This prototype still
+needs translations and native console acceptance. See the
+[proposal](docs/GAME_PRESETS.md) and [compatibility list](docs/GAME_COMPATIBILITY.md).
+
 ### Performance settings
 
 **Settings > Performance** trades accuracy for speed, for every game. A change applies when a game starts.

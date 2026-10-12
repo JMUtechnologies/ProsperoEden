@@ -2351,3 +2351,63 @@ msgstr "{0}/ (NSP atau XCI)"
 #: pe/ui/browse.cpp
 msgid "{0}/ (one folder per game ID)"
 msgstr "{0}/ (satu folder per ID judul)"
+
+#. Game preset and report interface.
+msgid "Recommended settings"
+msgstr "Pengaturan yang disarankan"
+
+#. Game preset and report interface.
+msgid "Confirm settings"
+msgstr "Konfirmasi pengaturan"
+
+#. Game preset and report interface.
+msgid "Experimental"
+msgstr "Eksperimental"
+
+#. Game preset and report interface.
+msgid "Tested"
+msgstr "Teruji"
+
+#. Game preset and report interface.
+msgid "Restore previous settings"
+msgstr "Pulihkan pengaturan sebelumnya"
+
+#. Game preset and report interface.
+msgid "Confirm"
+msgstr "Konfirmasi"
+
+#. Game preset and report interface.
+msgid "Report tested settings"
+msgstr "Laporkan pengaturan teruji"
+
+#. Game preset and report interface.
+msgid "No tested preset available"
+msgstr "Tidak ada preset teruji"
+
+#. Game preset and report interface.
+msgid "Needs testing on this Eden version"
+msgstr "Perlu diuji pada versi Eden ini"
+
+#. Game preset and report interface.
+msgid "Could not create report link."
+msgstr "Tidak dapat membuat tautan laporan."
+
+#. Game preset and report interface.
+msgid "Review the preset and test notes below. Press Cross again to apply."
+msgstr "Tinjau preset dan catatan pengujian di bawah. Tekan Cross lagi untuk menerapkan."
+
+#. Game preset and report interface.
+msgid "Press Cross again to restore the fields changed by the preset."
+msgstr "Tekan Cross lagi untuk memulihkan bidang yang diubah oleh preset."
+
+#. Game preset and report interface.
+msgid "Scan to review your settings report on GitHub. Nothing is posted until you submit it."
+msgstr "Pindai untuk meninjau laporan pengaturan di GitHub. Tidak ada yang dipublikasikan sebelum Anda mengirimkannya."
+
+#. Game preset and report interface.
+msgid "View preset"
+msgstr "Lihat preset"
+
+#. Game preset and report interface.
+msgid "No preset"
+msgstr "Tanpa preset"

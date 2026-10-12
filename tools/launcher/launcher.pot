@@ -302,6 +302,14 @@ msgstr ""
 msgid "Compiles the code a game used before as it starts, so new areas stutter less."
 msgstr ""
 
+#: pe/ui/game_options.cpp
+msgid "Confirm"
+msgstr ""
+
+#: pe/ui/game_options.cpp
+msgid "Confirm settings"
+msgstr ""
+
 #: pe/ui/multiplayer.cpp
 msgid "Connect using a room address, port and password."
 msgstr ""
@@ -356,6 +364,10 @@ msgstr ""
 
 #: pe/ui/pairing.cpp
 msgid "Could not change save-sync.json."
+msgstr ""
+
+#: pe/ui/game_options.cpp
+msgid "Could not create report link."
 msgstr ""
 
 #: pe/ui/library.cpp
@@ -603,6 +615,10 @@ msgstr ""
 
 #: eden_services.cpp
 msgid "Europe"
+msgstr ""
+
+#: pe/ui/game_options.cpp
+msgid "Experimental"
 msgstr ""
 
 #. Button hint: copy the game's save out to a folder.
@@ -1097,6 +1113,10 @@ msgstr ""
 msgid "Needs attention"
 msgstr ""
 
+#: pe/ui/game_options.cpp
+msgid "Needs testing on this Eden version"
+msgstr ""
+
 #: pe/ui/profiles.cpp
 msgid "New profile"
 msgstr ""
@@ -1153,6 +1173,10 @@ msgstr ""
 msgid "No mods for this game yet. Copy each mod's folder to {0}, next to roms/."
 msgstr ""
 
+#: pe/ui/library.cpp
+msgid "No preset"
+msgstr ""
+
 #: pe/ui/multiplayer.cpp
 msgid "No public rooms are available."
 msgstr ""
@@ -1171,6 +1195,10 @@ msgstr ""
 
 #: pe/ui/pairing.cpp
 msgid "No server to pair with: add a RomM server to sources.json, or set save-sync.json up over FTP."
+msgstr ""
+
+#: pe/ui/game_options.cpp
+msgid "No tested preset available"
 msgstr ""
 
 #: pe/ui/pairing.cpp
@@ -1224,7 +1252,7 @@ msgid "Nothing to import"
 msgstr ""
 
 #. A setting that is switched off.
-#: pe/ui/game_options.cpp, pe/ui/library.cpp, pe/ui/settings.cpp
+#: eden_services.cpp, pe/ui/game_options.cpp, pe/ui/library.cpp, pe/ui/settings.cpp
 msgid "Off"
 msgstr ""
 
@@ -1233,7 +1261,7 @@ msgid "Offline"
 msgstr ""
 
 #. A setting that is switched on.
-#: pe/ui/game_options.cpp, pe/ui/settings.cpp
+#: eden_services.cpp, pe/ui/game_options.cpp, pe/ui/settings.cpp
 msgid "On"
 msgstr ""
 
@@ -1396,6 +1424,10 @@ msgstr ""
 msgid "Press again to replace this game's save. The current one is backed up."
 msgstr ""
 
+#: pe/ui/game_options.cpp
+msgid "Press Cross again to restore the fields changed by the preset."
+msgstr ""
+
 #: pe/ui/multiplayer.cpp
 msgid "Private room"
 msgstr ""
@@ -1525,6 +1557,10 @@ msgstr ""
 msgid "RECENTLY PLAYED"
 msgstr ""
 
+#: pe/ui/game_options.cpp, pe/ui/library.cpp
+msgid "Recommended settings"
+msgstr ""
+
 #: pe/ui/settings.cpp
 msgid "REDUCE MOTION"
 msgstr ""
@@ -1569,6 +1605,10 @@ msgid "RENDERER"
 msgstr ""
 
 #: pe/ui/game_options.cpp
+msgid "Report tested settings"
+msgstr ""
+
+#: pe/ui/game_options.cpp
 msgid "Reset"
 msgstr ""
 
@@ -1578,6 +1618,14 @@ msgstr ""
 
 #: pe/ui/settings.cpp
 msgid "RESOLUTION"
+msgstr ""
+
+#: pe/ui/game_options.cpp
+msgid "Restore previous settings"
+msgstr ""
+
+#: pe/ui/game_options.cpp
+msgid "Review the preset and test notes below. Press Cross again to apply."
 msgstr ""
 
 #: pe/ui/game_options.cpp
@@ -1704,6 +1752,10 @@ msgstr ""
 
 #: pe/ui/pairing.cpp
 msgid "Scan the code with your phone, or open the address below."
+msgstr ""
+
+#: pe/ui/game_options.cpp
+msgid "Scan to review your settings report on GitHub. Nothing is posted until you submit it."
 msgstr ""
 
 #. Button hint: move through a long text (Up/Down).
@@ -1891,6 +1943,10 @@ msgstr ""
 
 #: pe/ui/profiles.cpp
 msgid "Taken off the list. Its save data stays on the console."
+msgstr ""
+
+#: pe/ui/game_options.cpp
+msgid "Tested"
 msgstr ""
 
 #: settings_store.h
@@ -2163,6 +2219,10 @@ msgstr ""
 
 #: pe/ui/home.cpp
 msgid "VIEW ALL GAMES"
+msgstr ""
+
+#: pe/ui/library.cpp
+msgid "View preset"
 msgstr ""
 
 #. Vulkan is a name (unchanged).

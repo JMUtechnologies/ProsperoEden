@@ -2351,3 +2351,63 @@ msgstr "{0}/ (NSP ή XCI)"
 #: pe/ui/browse.cpp
 msgid "{0}/ (one folder per game ID)"
 msgstr "{0}/ (ένας φάκελος ανά αναγνωριστικό τίτλου)"
+
+#. Game preset and report interface.
+msgid "Recommended settings"
+msgstr "Προτεινόμενες ρυθμίσεις"
+
+#. Game preset and report interface.
+msgid "Confirm settings"
+msgstr "Επιβεβαίωση ρυθμίσεων"
+
+#. Game preset and report interface.
+msgid "Experimental"
+msgstr "Πειραματικό"
+
+#. Game preset and report interface.
+msgid "Tested"
+msgstr "Δοκιμασμένο"
+
+#. Game preset and report interface.
+msgid "Restore previous settings"
+msgstr "Επαναφορά προηγούμενων ρυθμίσεων"
+
+#. Game preset and report interface.
+msgid "Confirm"
+msgstr "Επιβεβαίωση"
+
+#. Game preset and report interface.
+msgid "Report tested settings"
+msgstr "Αναφορά δοκιμασμένων ρυθμίσεων"
+
+#. Game preset and report interface.
+msgid "No tested preset available"
+msgstr "Δεν υπάρχει δοκιμασμένο προφίλ"
+
+#. Game preset and report interface.
+msgid "Needs testing on this Eden version"
+msgstr "Χρειάζεται δοκιμή σε αυτή την έκδοση Eden"
+
+#. Game preset and report interface.
+msgid "Could not create report link."
+msgstr "Αδυναμία δημιουργίας συνδέσμου αναφοράς."
+
+#. Game preset and report interface.
+msgid "Review the preset and test notes below. Press Cross again to apply."
+msgstr "Ελέγξτε το προφίλ και τις σημειώσεις δοκιμής παρακάτω. Πατήστε ξανά Cross για εφαρμογή."
+
+#. Game preset and report interface.
+msgid "Press Cross again to restore the fields changed by the preset."
+msgstr "Πατήστε ξανά Cross για επαναφορά των πεδίων που άλλαξε το προφίλ."
+
+#. Game preset and report interface.
+msgid "Scan to review your settings report on GitHub. Nothing is posted until you submit it."
+msgstr "Σαρώστε για να ελέγξετε την αναφορά ρυθμίσεων στο GitHub. Τίποτα δεν δημοσιεύεται μέχρι να την υποβάλετε."
+
+#. Game preset and report interface.
+msgid "View preset"
+msgstr "Προβολή προφίλ"
+
+#. Game preset and report interface.
+msgid "No preset"
+msgstr "Χωρίς προφίλ"

@@ -2351,3 +2351,63 @@ msgstr "{0}/ (NSP sau XCI)"
 #: pe/ui/browse.cpp
 msgid "{0}/ (one folder per game ID)"
 msgstr "{0}/ (un dosar pentru fiecare ID de titlu)"
+
+#. Game preset and report interface.
+msgid "Recommended settings"
+msgstr "Setări recomandate"
+
+#. Game preset and report interface.
+msgid "Confirm settings"
+msgstr "Confirmă setările"
+
+#. Game preset and report interface.
+msgid "Experimental"
+msgstr "Experimental"
+
+#. Game preset and report interface.
+msgid "Tested"
+msgstr "Testat"
+
+#. Game preset and report interface.
+msgid "Restore previous settings"
+msgstr "Restabilește setările anterioare"
+
+#. Game preset and report interface.
+msgid "Confirm"
+msgstr "Confirmă"
+
+#. Game preset and report interface.
+msgid "Report tested settings"
+msgstr "Raportează setările testate"
+
+#. Game preset and report interface.
+msgid "No tested preset available"
+msgstr "Niciun profil testat disponibil"
+
+#. Game preset and report interface.
+msgid "Needs testing on this Eden version"
+msgstr "Necesită testare pe această versiune Eden"
+
+#. Game preset and report interface.
+msgid "Could not create report link."
+msgstr "Nu s-a putut crea linkul raportului."
+
+#. Game preset and report interface.
+msgid "Review the preset and test notes below. Press Cross again to apply."
+msgstr "Verifică profilul și notele de test de mai jos. Apasă din nou Cross pentru aplicare."
+
+#. Game preset and report interface.
+msgid "Press Cross again to restore the fields changed by the preset."
+msgstr "Apasă din nou Cross pentru a restabili câmpurile schimbate de profil."
+
+#. Game preset and report interface.
+msgid "Scan to review your settings report on GitHub. Nothing is posted until you submit it."
+msgstr "Scanează pentru a verifica raportul setărilor pe GitHub. Nu se publică nimic până nu îl trimiți."
+
+#. Game preset and report interface.
+msgid "View preset"
+msgstr "Vezi profilul"
+
+#. Game preset and report interface.
+msgid "No preset"
+msgstr "Fără profil"

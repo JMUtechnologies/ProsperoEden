@@ -173,8 +173,8 @@ class Launcher
 
     // ---- a game's own settings by category, and the button mapping (game_options.cpp) ----
     // Categories, in the order of the game settings' rows: video, performance, audio, controls,
-    // system, language.
-    static constexpr int kGameOptionCategories = 6;
+    // system, language, recommended settings.
+    static constexpr int kGameOptionCategories = 7;
     void open_game_options(int category);
     void press_game_options(Key key);
     // The RNG seed is typed on the system keyboard: opens it, and takes its answer when it closes.
@@ -399,6 +399,7 @@ class Launcher
     ListView video_rows_; // the Video dialog's rows (more than it shows)
     ListView performance_rows_; // the Performance dialog's rows (more than it shows)
     GameSettings game_settings_;
+    GamePreset game_preset_;
     bool game_docked_ = true;
     SaveSource import_source_ = SaveSource::none; // what Save data could import for the game
     bool import_armed_ = false;                   // Cross was pressed once: the next one imports
@@ -413,6 +414,9 @@ class Launcher
     };
     std::vector<ModRow> mod_list_;
     ListView mod_rows_;
+    bool preset_armed_ = false;
+    bool preset_reporting_ = false;
+    QrCode preset_report_qr_;
     int game_options_ = 0;          // the category a game's own settings dialog shows
     ListView option_rows_;          // its rows
     std::atomic<bool> seed_edit_stop_{false};

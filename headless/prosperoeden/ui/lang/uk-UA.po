@@ -2351,3 +2351,63 @@ msgstr "{0}/ (NSP, XCI)"
 #: pe/ui/browse.cpp
 msgid "{0}/ (one folder per game ID)"
 msgstr "{0}/ (тека на кожен ID гри)"
+
+#. Game preset and report interface.
+msgid "Recommended settings"
+msgstr "Рекомендовані налаштування"
+
+#. Game preset and report interface.
+msgid "Confirm settings"
+msgstr "Підтвердити налаштування"
+
+#. Game preset and report interface.
+msgid "Experimental"
+msgstr "Експериментально"
+
+#. Game preset and report interface.
+msgid "Tested"
+msgstr "Перевірено"
+
+#. Game preset and report interface.
+msgid "Restore previous settings"
+msgstr "Відновити попередні налаштування"
+
+#. Game preset and report interface.
+msgid "Confirm"
+msgstr "Підтвердити"
+
+#. Game preset and report interface.
+msgid "Report tested settings"
+msgstr "Звіт про перевірені налаштування"
+
+#. Game preset and report interface.
+msgid "No tested preset available"
+msgstr "Немає перевіреного профілю"
+
+#. Game preset and report interface.
+msgid "Needs testing on this Eden version"
+msgstr "Потрібна перевірка на цій версії Eden"
+
+#. Game preset and report interface.
+msgid "Could not create report link."
+msgstr "Не вдалося створити посилання на звіт."
+
+#. Game preset and report interface.
+msgid "Review the preset and test notes below. Press Cross again to apply."
+msgstr "Перевірте профіль і примітки до тесту нижче. Натисніть Cross ще раз для застосування."
+
+#. Game preset and report interface.
+msgid "Press Cross again to restore the fields changed by the preset."
+msgstr "Натисніть Cross ще раз, щоб відновити поля, змінені профілем."
+
+#. Game preset and report interface.
+msgid "Scan to review your settings report on GitHub. Nothing is posted until you submit it."
+msgstr "Скануйте код і перевірте звіт про налаштування на GitHub. Нічого не публікується, доки ви не надішлете звіт."
+
+#. Game preset and report interface.
+msgid "View preset"
+msgstr "Переглянути профіль"
+
+#. Game preset and report interface.
+msgid "No preset"
+msgstr "Немає профілю"

@@ -374,6 +374,16 @@ struct FolderInfo
     int games = -1;
 };
 
+struct GamePreset
+{
+    bool available = false;
+    bool experimental = true;
+    bool compatible = false;
+    bool restore = false;
+    std::string evidence;
+    std::vector<std::string> changes;
+};
+
 class Services
 {
   public:
@@ -430,6 +440,23 @@ class Services
     virtual bool set_docked(std::uint64_t title_id, bool docked) = 0;
     virtual GameSettings game_settings(std::uint64_t title_id) = 0;
     virtual bool set_game_settings(std::uint64_t title_id, const GameSettings &settings) = 0;
+
+    virtual GamePreset game_preset(std::uint64_t)
+    {
+        return {};
+    }
+    virtual bool apply_game_preset(std::uint64_t)
+    {
+        return false;
+    }
+    virtual bool restore_game_preset(std::uint64_t)
+    {
+        return false;
+    }
+    virtual std::string game_report_url(std::uint64_t)
+    {
+        return {};
+    }
 
     // ---- settings ----
     virtual Preferences preferences() = 0;

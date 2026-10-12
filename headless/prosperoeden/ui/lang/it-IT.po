@@ -2351,3 +2351,63 @@ msgstr "{0}/ (NSP o XCI)"
 #: pe/ui/browse.cpp
 msgid "{0}/ (one folder per game ID)"
 msgstr "{0}/ (una cartella per ID titolo)"
+
+#. Game preset and report interface.
+msgid "Recommended settings"
+msgstr "Impostazioni consigliate"
+
+#. Game preset and report interface.
+msgid "Confirm settings"
+msgstr "Conferma impostazioni"
+
+#. Game preset and report interface.
+msgid "Experimental"
+msgstr "Sperimentale"
+
+#. Game preset and report interface.
+msgid "Tested"
+msgstr "Testato"
+
+#. Game preset and report interface.
+msgid "Restore previous settings"
+msgstr "Ripristina impostazioni precedenti"
+
+#. Game preset and report interface.
+msgid "Confirm"
+msgstr "Conferma"
+
+#. Game preset and report interface.
+msgid "Report tested settings"
+msgstr "Segnala impostazioni testate"
+
+#. Game preset and report interface.
+msgid "No tested preset available"
+msgstr "Nessun profilo testato disponibile"
+
+#. Game preset and report interface.
+msgid "Needs testing on this Eden version"
+msgstr "Da testare su questa versione di Eden"
+
+#. Game preset and report interface.
+msgid "Could not create report link."
+msgstr "Impossibile creare il link della segnalazione."
+
+#. Game preset and report interface.
+msgid "Review the preset and test notes below. Press Cross again to apply."
+msgstr "Controlla il profilo e le note del test qui sotto. Premi di nuovo Cross per applicare."
+
+#. Game preset and report interface.
+msgid "Press Cross again to restore the fields changed by the preset."
+msgstr "Premi di nuovo Cross per ripristinare i campi modificati dal profilo."
+
+#. Game preset and report interface.
+msgid "Scan to review your settings report on GitHub. Nothing is posted until you submit it."
+msgstr "Scansiona per controllare la segnalazione delle impostazioni su GitHub. Nulla viene pubblicato finché non la invii."
+
+#. Game preset and report interface.
+msgid "View preset"
+msgstr "Visualizza profilo"
+
+#. Game preset and report interface.
+msgid "No preset"
+msgstr "Nessun profilo"

@@ -2351,3 +2351,63 @@ msgstr "{0}/ (NSP, XCI)"
 #: pe/ui/browse.cpp
 msgid "{0}/ (one folder per game ID)"
 msgstr "{0}/ (папка на каждый ID игры)"
+
+#. Game preset and report interface.
+msgid "Recommended settings"
+msgstr "Рекомендуемые настройки"
+
+#. Game preset and report interface.
+msgid "Confirm settings"
+msgstr "Подтвердить настройки"
+
+#. Game preset and report interface.
+msgid "Experimental"
+msgstr "Экспериментально"
+
+#. Game preset and report interface.
+msgid "Tested"
+msgstr "Проверено"
+
+#. Game preset and report interface.
+msgid "Restore previous settings"
+msgstr "Вернуть прежние настройки"
+
+#. Game preset and report interface.
+msgid "Confirm"
+msgstr "Подтвердить"
+
+#. Game preset and report interface.
+msgid "Report tested settings"
+msgstr "Сообщить о проверенных настройках"
+
+#. Game preset and report interface.
+msgid "No tested preset available"
+msgstr "Нет проверенного профиля"
+
+#. Game preset and report interface.
+msgid "Needs testing on this Eden version"
+msgstr "Нужна проверка на этой версии Eden"
+
+#. Game preset and report interface.
+msgid "Could not create report link."
+msgstr "Не удалось создать ссылку на отчёт."
+
+#. Game preset and report interface.
+msgid "Review the preset and test notes below. Press Cross again to apply."
+msgstr "Проверьте профиль и заметки о тесте ниже. Нажмите Cross ещё раз для применения."
+
+#. Game preset and report interface.
+msgid "Press Cross again to restore the fields changed by the preset."
+msgstr "Нажмите Cross ещё раз, чтобы вернуть поля, изменённые профилем."
+
+#. Game preset and report interface.
+msgid "Scan to review your settings report on GitHub. Nothing is posted until you submit it."
+msgstr "Сканируйте код и проверьте отчёт о настройках на GitHub. Ничего не публикуется до вашей отправки отчёта."
+
+#. Game preset and report interface.
+msgid "View preset"
+msgstr "Показать профиль"
+
+#. Game preset and report interface.
+msgid "No preset"
+msgstr "Нет профиля"

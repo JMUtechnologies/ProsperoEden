@@ -2351,3 +2351,63 @@ msgstr "{0}/ (NSP eller XCI)"
 #: pe/ui/browse.cpp
 msgid "{0}/ (one folder per game ID)"
 msgstr "{0}/ (én mappe per tittel-ID)"
+
+#. Game preset and report interface.
+msgid "Recommended settings"
+msgstr "Anbefalte innstillinger"
+
+#. Game preset and report interface.
+msgid "Confirm settings"
+msgstr "Bekreft innstillinger"
+
+#. Game preset and report interface.
+msgid "Experimental"
+msgstr "Eksperimentell"
+
+#. Game preset and report interface.
+msgid "Tested"
+msgstr "Testet"
+
+#. Game preset and report interface.
+msgid "Restore previous settings"
+msgstr "Gjenopprett tidligere innstillinger"
+
+#. Game preset and report interface.
+msgid "Confirm"
+msgstr "Bekreft"
+
+#. Game preset and report interface.
+msgid "Report tested settings"
+msgstr "Rapporter testede innstillinger"
+
+#. Game preset and report interface.
+msgid "No tested preset available"
+msgstr "Ingen testet profil tilgjengelig"
+
+#. Game preset and report interface.
+msgid "Needs testing on this Eden version"
+msgstr "Må testes på denne Eden-versjonen"
+
+#. Game preset and report interface.
+msgid "Could not create report link."
+msgstr "Kunne ikke opprette rapportlenken."
+
+#. Game preset and report interface.
+msgid "Review the preset and test notes below. Press Cross again to apply."
+msgstr "Se gjennom profilen og testnotatene nedenfor. Trykk Cross igjen for å bruke."
+
+#. Game preset and report interface.
+msgid "Press Cross again to restore the fields changed by the preset."
+msgstr "Trykk Cross igjen for å gjenopprette feltene som profilen endret."
+
+#. Game preset and report interface.
+msgid "Scan to review your settings report on GitHub. Nothing is posted until you submit it."
+msgstr "Skann for å se gjennom innstillingsrapporten på GitHub. Ingenting publiseres før du sender den."
+
+#. Game preset and report interface.
+msgid "View preset"
+msgstr "Vis profil"
+
+#. Game preset and report interface.
+msgid "No preset"
+msgstr "Ingen profil"

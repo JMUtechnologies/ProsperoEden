@@ -249,8 +249,27 @@ void pictures(Stage &s)
         s.press({Key::circle});
         s.wait(0.6f);
     }
+    // Presets preview all changes, require confirmation, preserve undo and open a report QR.
+    const auto applies_before = s.services.preset_applies;
+    const auto restores_before = s.services.preset_restores;
+    s.press({Key::down, Key::down, Key::cross});
+    s.wait(0.6f);
+    s.shoot("70-preset-preview");
+    s.press({Key::cross});
+    if (s.services.preset_applies != applies_before) s.ok = false;
+    s.shoot("71-preset-confirm");
+    s.press({Key::cross});
+    if (s.services.preset_applies != applies_before + 1 || !s.services.preset_backup) s.ok = false;
+    s.press({Key::down, Key::cross});
+    if (s.services.preset_restores != restores_before) s.ok = false;
+    s.press({Key::cross});
+    if (s.services.preset_restores != restores_before + 1 || s.services.preset_backup || s.services.game_settings(0).renderer != 0) s.ok = false;
+    s.press({Key::down, Key::cross});
+    s.wait(0.6f);
+    s.shoot("72-settings-report-qr");
+    s.press({Key::circle, Key::circle});
     // The game's mods: the row, the list, one switched on, and a game that has none.
-    s.press({Key::down, Key::down});
+    s.press({Key::down});
     s.wait(0.6f);
     s.shoot("35-game-mods-row");
     s.press({Key::cross});
@@ -732,8 +751,7 @@ void pictures(Stage &s)
     s.shoot("94-library-downloaded");
     s.press({Key::triangle});
     s.wait(0.6f);
-    s.press({Key::down, Key::down, Key::down, Key::down, Key::down, Key::down, Key::down, Key::down,
-             Key::down});
+    s.press({Key::down, Key::down, Key::down, Key::down, Key::down, Key::down, Key::down, Key::down, Key::down, Key::down});
     s.wait(0.6f);
     s.shoot("95-game-delete-row");
     s.press({Key::cross});
