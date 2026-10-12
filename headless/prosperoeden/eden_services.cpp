@@ -19,6 +19,7 @@
 #include "remote/save_sync.h"
 #include "save_sync_config.h"
 #include "version.h"
+#include "game_presets.h"
 #include "../system_keyboard.h"
 #include "common/string_util.h"
 
@@ -930,6 +931,38 @@ bool EdenServices::set_game_settings(std::uint64_t title_id, const pe::ui::GameS
     const bool saved = Eden::SaveGameSettings(title_id, value);
     if (!saved) Eden::Report("settings", "Could not write game settings");
     return saved;
+}
+
+pe::ui::GamePreset EdenServices::game_preset(std::uint64_t title_id) {
+    pe::ui::GamePreset result;
+    result.restore = Eden::Presets::CanRestore(title_id);
+    const auto* preset = Eden::Presets::Find(title_id);
+    if (!preset) return result;
+    result.available = true;
+    result.experimental = preset->experimental;
+    result.compatible = std::string_view(Eden::kAppVersion) == preset->version;
+    result.evidence = preset->evidence;
+    const auto patch = Eden::Settings::Json::parse(preset->changes);
+    static constexpr const char* labels[] = {"Console mode", "Renderer", "Resolution", "Upscaling filter", "Refresh rate", "Frame generation",
+        "Compile ahead", "Asynchronous shaders", "Faster GPU emulation", "Faster CPU emulation", "Faster DMA", "Reactive flushing", "Skip CPU invalidation"};
+    for (std::size_t i = 0; i < std::size(Eden::Presets::kPaths); ++i) {
+        const auto& value = patch.at(Eden::Settings::Json::json_pointer(Eden::Presets::kPaths[i]));
+        const std::string display = value.is_boolean() ? (value.get<bool>() ? pe::tr("On") : pe::tr("Off")) : value.get<std::string>();
+        result.changes.push_back(std::string(pe::tr(labels[i])) + ": " + display);
+    }
+    return result;
+}
+
+bool EdenServices::apply_game_preset(std::uint64_t title_id) {
+    return Eden::Presets::Apply(title_id, Eden::kAppVersion);
+}
+
+bool EdenServices::restore_game_preset(std::uint64_t title_id) {
+    return Eden::Presets::Restore(title_id);
+}
+
+std::string EdenServices::game_report_url(std::uint64_t title_id) {
+    return Eden::Presets::ReportUrl(title_id, Eden::kAppVersion);
 }
 
 pe::ui::Preferences EdenServices::preferences() {

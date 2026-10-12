@@ -240,6 +240,38 @@ class FakeServices final : public ui::Services
         game_settings_ = settings;
         return true;
     }
+    bool preset_available = true;
+    unsigned preset_applies = 0, preset_restores = 0;
+    bool preset_backup = false;
+    ui::GameSettings before_preset;
+    ui::GamePreset game_preset(std::uint64_t) override
+    {
+        return {preset_available, true, preset_available, preset_backup,
+            "Experimental host fixture; no hardware acceptance.\nReview changes before confirming.",
+            {"Renderer: Vulkan", "Resolution: 1x", "Asynchronous shaders: On", "Faster GPU emulation: Off"}};
+    }
+    bool apply_game_preset(std::uint64_t) override
+    {
+        ++preset_applies;
+        if (!preset_backup) before_preset = game_settings_;
+        preset_backup = true;
+        game_settings_.renderer = 1;
+        game_settings_.resolution = 2;
+        return true;
+    }
+    bool restore_game_preset(std::uint64_t) override
+    {
+        if (!preset_backup) return false;
+        ++preset_restores;
+        game_settings_ = before_preset;
+        preset_backup = false;
+        return true;
+    }
+    std::string game_report_url(std::uint64_t) override
+    {
+        return "https://github.com/blackbearreloaded/ProsperoEden/issues/new?template=compatibility_settings.yml";
+    }
+
     ui::Preferences preferences() override
     {
         return preferences_;

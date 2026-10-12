@@ -41,6 +41,11 @@ public:
     pe::ui::GameSettings game_settings(std::uint64_t title_id) override;
     bool set_game_settings(std::uint64_t title_id, const pe::ui::GameSettings& settings) override;
 
+    pe::ui::GamePreset game_preset(std::uint64_t title_id) override;
+    bool apply_game_preset(std::uint64_t title_id) override;
+    bool restore_game_preset(std::uint64_t title_id) override;
+    std::string game_report_url(std::uint64_t title_id) override;
+
     pe::ui::Preferences preferences() override;
     bool set_preferences(const pe::ui::Preferences& preferences) override;
     const std::vector<std::string>& resolution_labels() override;

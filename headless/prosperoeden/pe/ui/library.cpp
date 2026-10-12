@@ -40,6 +40,7 @@ enum GameRow : int
     row_audio,
     row_controls,
     row_language,
+    row_presets,
     row_mods,
     row_save,   // in builds that move saves
     row_delete, // a game a download source has: deleted from the console
@@ -395,6 +396,7 @@ void Launcher::press_library(Key key)
             return;
         }
         game_settings_ = services_.game_settings(game->title_id);
+        game_preset_ = services_.game_preset(game->title_id);
         game_docked_ = selected_docked_;
         import_source_ = services_.save_transfer_available() ?
                              services_.save_import_source(game->title_id) : SaveSource::none;
@@ -720,7 +722,7 @@ void Launcher::press_game(Key key)
     default:
         return;
     }
-    if (kind >= row_video && kind <= row_language)
+    if (kind >= row_video && kind <= row_presets)
     {
         // A kind of setting has its own list.
         if (key == Key::cross)
@@ -847,6 +849,7 @@ void Launcher::draw_game(Canvas &c, float open)
         changed(row_audio - row_video),
         changed(row_controls - row_video),
         changed(row_language - row_video),
+        game_preset_.available ? tr("View preset") : tr("No preset"),
         // With the game's Mods switch off (the Library's), none of them is on.
         mods_.empty() ? std::string{tr("No mods")} :
         game != nullptr && !game->mods_enabled ? std::string{tr("Off")} :
@@ -860,7 +863,7 @@ void Launcher::draw_game(Canvas &c, float open)
     };
     static constexpr const char *kLabels[] = {TR("Console mode"), TR("Video"),    TR("Performance"),
                                               TR("Audio"),        TR("Controls"), TR("Language"),
-                                              TR("Mods"),         TR("Save data"), TR("Delete from console")};
+                                              TR("Recommended settings"), TR("Mods"),         TR("Save data"), TR("Delete from console")};
     // Five rows show; the list scrolls to the others.
     list.push_clip({kDialogWindow.x - 24.0f, kDialogWindow.y - 6.0f, kDialogWindow.w + 48.0f,
                     kDialogWindow.h + 12.0f});
