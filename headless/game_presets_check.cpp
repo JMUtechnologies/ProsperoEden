@@ -59,6 +59,8 @@ int main() {
     const auto url = Eden::Presets::ReportUrl(title, "01.000.110", file);
     assert(url.find("https://github.com/blackbearreloaded/ProsperoEden/issues/new?") == 0);
     assert(url.find("template=compatibility_settings.yml") != std::string::npos);
+    assert(url.find("&body=" + Eden::Presets::UrlEncode("### Game\nTitle ID: " + key)) != std::string::npos);
+    assert(url.find(Eden::Presets::UrlEncode("- [ ] I personally tested these settings")) != std::string::npos);
     assert(url.find("private") == std::string::npos && url.find(first) == std::string::npos);
     assert(Eden::Presets::UrlEncode("A&B\n") == "A%26B%0A");
     assert(!Eden::Presets::ReportUrl(0, "01.000.110", file).size());

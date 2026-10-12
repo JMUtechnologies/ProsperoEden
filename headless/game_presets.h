@@ -156,9 +156,17 @@ inline std::string ReportUrl(uint64_t title, std::string_view version, const std
             {"fast_gpu", speed.fast_gpu}, {"unsafe_cpu", speed.unsafe_cpu}, {"unsafe_dma", speed.unsafe_dma},
             {"reactive_flushing", speed.reactive_flushing}, {"skip_invalidation", speed.skip_invalidation}}}
     };
+    // Mobile clients may ignore issue-form field IDs; carry the same snapshot in body.
+    const std::string body = "### Game\nTitle ID: " + Settings::TitleKey(title) +
+        "\nName / region / update: [complete]\n\n### ProsperoEden\n" + std::string(version) +
+        "\n\n### PS5\nModel / firmware / enabler / ShadowMountPlus: [complete]" +
+        "\n\n### Settings snapshot\nCheck these against what you actually tested.\n```json\n" +
+        settings.dump() + "\n```\n\n### Test\nScene / duration: [complete]" +
+        "\nResult / native FPS / graphics / audio / restart behavior: [complete]" +
+        "\n\n- [ ] I personally tested these settings and reviewed this report.";
     return std::string("https://github.com/") + EDEN_PRESET_REPORT_REPOSITORY + "/issues/new?template=compatibility_settings.yml&title=" +
         UrlEncode("[Settings report] " + Settings::TitleKey(title)) + "&game=" + UrlEncode(Settings::TitleKey(title)) +
-        "&eden=" + UrlEncode(version) + "&settings=" + UrlEncode(settings.dump());
+        "&eden=" + UrlEncode(version) + "&settings=" + UrlEncode(settings.dump()) + "&body=" + UrlEncode(body);
 }
 
 }

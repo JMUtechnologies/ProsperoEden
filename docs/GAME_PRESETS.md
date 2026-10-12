@@ -37,7 +37,9 @@ notes explain the qualification and untested combinations.
 Report tested settings creates a QR code for a prefilled GitHub issue form
 (`.github/ISSUE_TEMPLATE/compatibility_settings.yml`). Scan it with a phone, review
 and complete the report, sign into GitHub if needed, and submit. The app does not
-make an authenticated upload and never needs a GitHub token. This is an in-app
+make an authenticated upload and never needs a GitHub token. A plain-text body
+fallback includes the same snapshot and tester prompts for mobile clients that
+ignore issue-form field IDs. This is an in-app
 entry point with a phone/GitHub handoff, not direct console submission.
 
 The URL includes only title ID, Eden version, and an allowlisted snapshot of the
@@ -84,8 +86,11 @@ The tester opened Recommended settings, confirmed Apply, then confirmed Restore.
 Readback verified all 13 preset values, the original-value snapshot and preservation
 of unrelated game settings. After Restore, all original per-game settings matched
 and the temporary preset backup was removed. The tester scanned the displayed QR
-and GitHub opened on their phone; repository destination and prefilled fields still
-await tester confirmation. No issue was submitted by the app or test automation.
+and GitHub opened in its mobile app with the correct fork and game-ID title.
+The mobile app ignored the issue-form fields and showed an empty body. A follow-up
+adds a standard `body` query parameter containing the same allowlisted snapshot
+and prompts, while retaining web issue-form fields. Host checks and QR decode
+cover this fallback; a rebuilt application and phone retest remain pending. No issue was submitted by the app or test automation.
 
 This validates the settings flow, not Jamboree gameplay performance. There are no
 verified game presets yet. New UI text falls back to English; translation-catalog
